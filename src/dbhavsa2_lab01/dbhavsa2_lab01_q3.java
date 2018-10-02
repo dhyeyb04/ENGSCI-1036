@@ -1,5 +1,6 @@
 package dbhavsa2_lab01;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class dbhavsa2_lab01_q3 {
@@ -8,6 +9,7 @@ public class dbhavsa2_lab01_q3 {
 		//Instantiate variables
 		double a, b, c, root1, root2, imagNum1 = 0;
 		Scanner inputScanner = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("###.####");
 		
 		//Opening statement
 		System.out.println("****************************************************");
@@ -32,25 +34,25 @@ public class dbhavsa2_lab01_q3 {
 		if (a == 0) {
 			if (b != 0) { //One solution
 				root1 = -c/b;
-				System.out.println("The solution is: " + root1);
+				System.out.println("The solution is: " + df.format(root1));
 			}
 			else if (b == 0 && c ==0) {//Zero solutions
 				root1 = 0;
-				System.out.println("The solution is: " + root1);
+				System.out.println("The solution is: " + df.format(root1));
 			}
 			else //No solutions
-				System.out.println("A solution does not exist");
+				System.out.println("A solution does not exist!");
 		}
 		else {
 			if ((b*b)-(4*a*c) >= 0) {//Two solutions
 				root1 = (((-b) + Math.sqrt((b*b) - (4*a*c)))/(2*a));
 				root2 = (((-b) - Math.sqrt((b*b) - (4*a*c)))/(2*a));
-				System.out.println("Your equation has real roots: " + root1 + " and " + root2 + ".");
+				System.out.println("Your equation has real roots: " + df.format(root1) + " and " + df.format(root2) + ".");
 			}
 			else {//Complex solution
 				root1 = ((-b)/(2*a));
 				imagNum1 = Math.sqrt(((4*a*c) - (b*b))/(2*a));
-				System.out.println("Your equation has complex roots: " + root1 + " + " + imagNum1 + "i and " + root1 + " - " + imagNum1 + "i.");
+				System.out.println("Your equation has complex roots: " + root1 + " + " + df.format(imagNum1) + "i and " + root1 + " - " + df.format(imagNum1) + "i.");
 			}
 		}
 	}
