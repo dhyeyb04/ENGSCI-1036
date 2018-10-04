@@ -34,7 +34,7 @@ public class dbhavsa2_lab02_q2 {
 			total += int1;
 			
 			//Calculations
-			mean = total/x;
+			mean = (double) total/x;
 			//Max and Min allocation
 			if (x == 1){
 				max = int1;
