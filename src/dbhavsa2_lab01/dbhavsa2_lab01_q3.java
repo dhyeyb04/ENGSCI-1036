@@ -37,21 +37,21 @@ public class dbhavsa2_lab01_q3 {
 				System.out.println("The solution is: " + df.format(root1));
 			}
 			else if (b == 0 && c ==0) {//Zero solutions
-				root1 = 0;
-				System.out.println("The solution is: " + df.format(root1));
+				//root = 0;
+				System.out.println("There are infinite number of solutions");
 			}
 			else //No solutions
 				System.out.println("A solution does not exist!");
 		}
 		else {
 			if ((b*b)-(4*a*c) >= 0) {//Two solutions
-				root1 = (((-b) + Math.sqrt((b*b) - (4*a*c)))/(2*a));
+				root1 = (-b + Math.sqrt(b*b - 4*a*c))/(2*a);
 				root2 = (((-b) - Math.sqrt((b*b) - (4*a*c)))/(2*a));
 				System.out.println("Your equation has real roots: " + df.format(root1) + " and " + df.format(root2) + ".");
 			}
 			else {//Complex solution
 				root1 = ((-b)/(2*a));
-				imagNum1 = Math.sqrt(((4*a*c) - (b*b))/(2*a));
+				imagNum1 = Math.sqrt(((4*a*c) - (b*b)))/(2*a);
 				System.out.println("Your equation has complex roots: " + root1 + " + " + df.format(imagNum1) + "i and " + root1 + " - " + df.format(imagNum1) + "i.");
 			}
 		}
