@@ -10,8 +10,6 @@ public class dbhavsa2_lab02_q2 {
 		Scanner inputScanner = new Scanner(System.in);
 		int loops, int1, total = 0, max = 0, min = 0, even = 0, odd = 0;
 		double mean;
-		//double ;
-		//DecimalFormat df = new DecimalFormat("###.####");
 		
 		//Opening statement
 		System.out.println("******************************");
@@ -22,11 +20,14 @@ public class dbhavsa2_lab02_q2 {
 		System.out.println("Question 2");
 		System.out.println("******************************");
 		
+		//Ask for input till a positive integer is received
 		do{
 			System.out.println("Enter an integer number for the number of loop iterations: ");
 			loops = inputScanner.nextInt();
 			System.out.println("");
 		} while (loops < 0);
+		
+		//Execute program as per user input
 		for (int x = 1; x <= loops; x++) {
 			System.out.println("Enter integer " + x + ": ");
 			int1 = inputScanner.nextInt();
@@ -47,6 +48,7 @@ public class dbhavsa2_lab02_q2 {
 					min = int1;
 				}
 			}
+			
 			//Even and odd count
 			if (int1 % 2== 0) {
 				even ++;
