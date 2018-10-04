@@ -17,12 +17,13 @@ public class dbhavsa2_lab02_q3 {
 		System.out.println("Question 3");
 		System.out.println("******************************");
 		
+		//Make sure input is greater than or equal to 0
 		do{
 			System.out.println("Input an integer number to calculate its factorial: ");
 			input = inputScanner.nextInt();
 		} while (input < 0);
 		for (int x = 1; x <= input; x++) {
-			fact *= x;
+			fact *= x; //fact = previous factorial value * x value of for loop
 		}
 		System.out.println("The resulting factorial is: " + fact);
 		inputScanner.close();
