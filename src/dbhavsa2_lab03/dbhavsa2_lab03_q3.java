@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class dbhavsa2_lab03_q3 {
 	
-	public class Employee{
-		String m_firstName, m_lastName;
-		double m_salary;
+	static class Employee{
+		private String m_firstName, m_lastName;
+		private double m_salary;
 		
 		public Employee(){
 	    }
@@ -25,25 +25,18 @@ public class dbhavsa2_lab03_q3 {
 	}
 	
 	public static void main(String[] args) {
-		//Instantiate variables
-		//String first = "", last = "";
-		//double sal = 0.0;
 		Scanner inputScanner = new Scanner(System.in);
 		Employee emp = new Employee();
 		
 		System.out.println("Enter the employee’s first name: ");
 		emp.m_firstName = inputScanner.next();
-		//first = inputScanner.next();
-		//emp.m_firstName = first;
+		
 		System.out.println("Enter the employee’s last name: ");
 		emp.m_lastName = inputScanner.next();
-		//last = inputScanner.next();
-		//emp.m_lastName = last;
+		
 		System.out.println("Enter the employee’s salary: ");
 		emp.m_salary = inputScanner.nextDouble();
-		//sal = inputScanner.nextDouble();
-		//emp.m_salary = sal;
-		
+				
 		inputScanner.close();
 		
 		emp.printInfo();
