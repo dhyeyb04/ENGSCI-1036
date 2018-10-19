@@ -50,7 +50,7 @@ public class dbhavsa2_lab02_q2 {
 			}
 			
 			//Even and odd count
-			if (int1 % 2== 0) {
+			if (int1 % 2 == 0) {
 				even ++;
 			}
 			else {
@@ -63,8 +63,9 @@ public class dbhavsa2_lab02_q2 {
 			System.out.println("Min value: " + min);
 			System.out.println("Even count: " + even);
 			System.out.println("Odd count: " + odd);
-			System.out.println("");
+			System.out.println("");	
 		}
+		System.out.println("Goodbye!");
 		inputScanner.close();
 	}
 
