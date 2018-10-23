@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class dbhavsa2_lab03_q3 {
 	
-	static class Employee{
+	public static class Employee{
 		private String m_firstName, m_lastName;
 		private double m_salary;
 		

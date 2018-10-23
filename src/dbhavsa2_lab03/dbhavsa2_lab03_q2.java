@@ -25,39 +25,42 @@ public class dbhavsa2_lab03_q2 {
 	
 	public static void main(String[] args) {
 		Scanner inputScanner = new Scanner(System.in);
-		int n =100;
-		Double x, num, denom, total = 0.0;
-		String yn;
+		int N =100;
+		Double x;
+		char yn;
 		
+		//Keeps looping based on user choice
 		do{
+			//Prompts user and calculates result
+			Double total = 0.0;
+			
+			do {
 			System.out.println("Enter a value to compute the inverse tangent (-1 to 1): ");
 			x = inputScanner.nextDouble();
 			
-			do {
+			//Ensures input value is in domain of function
+			if (x < -1 || x > 1)
 				System.out.println("Incorrect input!");
-			} while (x < 1 && x > -1);
-			
-			for (int i=0; i == n; i++) {
-				num = (computePower(-1, n) * (computePower(x, (2*n)+1)));
-				denom = (double) (2*n)+1;
-				total += num/denom;
-			}
-			
-			/*if (x < 1 && x > -1) {
-				for (int i=0; i == n; i++) {
-					num = (computePower(-1, n) * (computePower(x, (2*n)+1)));
-					denom = (double) (2*n)+1;
-					total += num/denom;
+			} while (x < -1 || x > 1);
+
+			//Calculate inverse tangent
+			for (int n = 0; n <= N; n++) {
+				double currentValue = (computePower(x, 2*n+1))/(2*n+1);
+				//Due to (−1)^n, when n is even, it will add to previous value, else subtract
+				if (n % 2 == 0) {
+					total += currentValue;
+				}
+				else {
+					total += -currentValue;
 				}
 			}
-			else {
-				System.out.println("Incorrect input!");
-			}
-			*/
-						
+			
+			System.out.println("The result is " + total);
+			
+			//Ask if user would like to loop again
 			System.out.println("Would you like to continue? (y/n): ");
-			yn = inputScanner.next();
-		} while (yn.equals("y"));
+			yn = inputScanner.next().charAt(0);
+		} while (yn == 'y');
 		
 		System.out.println("Goodbye!");
 		inputScanner.close();
