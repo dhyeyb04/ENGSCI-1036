@@ -25,7 +25,7 @@ public class dbhavsa2_lab03_q2 {
 	
 	public static void main(String[] args) {
 		Scanner inputScanner = new Scanner(System.in);
-		int N =100;
+		int N =1000;
 		Double x;
 		char yn;
 		

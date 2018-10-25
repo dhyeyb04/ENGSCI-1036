@@ -4,41 +4,47 @@ import java.util.Scanner;
 
 public class dbhavsa2_lab03_q3 {
 	
+	//Create Employee class within dbhavsa2_lab03_q3 main class
 	public static class Employee{
-		private String m_firstName, m_lastName;
-		private double m_salary;
+		public String m_firstName, m_lastName;
+		public double m_salary;
 		
-		public Employee(){
-	    }
-		
+		//Constructor to set class values as input values
 		public Employee(String fName, String lName, double salary){
 			m_firstName = fName;
 			m_lastName = lName;
 			m_salary = salary;
 		}
-
-		void printInfo(){
-			System.out.println("First Name:" + m_firstName);
-			System.out.println("Last Name:" + m_lastName);
-			System.out.println("Salary:" + m_salary);
+		
+		//Method to print out values
+		private void printInfo(){
+			System.out.println("First Name: " + m_firstName);
+			System.out.println("Last Name: " + m_lastName);
+			System.out.println("Salary: " + m_salary);
 		}
 	}
 	
 	public static void main(String[] args) {
+		//Instantiate local variables
 		Scanner inputScanner = new Scanner(System.in);
-		Employee emp = new Employee();
+		String fName, lName;
+		double sal;
 		
+		//Set local variables as input values
 		System.out.println("Enter the employee’s first name: ");
-		emp.m_firstName = inputScanner.next();
+		fName = inputScanner.next();
 		
 		System.out.println("Enter the employee’s last name: ");
-		emp.m_lastName = inputScanner.next();
+		lName = inputScanner.next();
 		
 		System.out.println("Enter the employee’s salary: ");
-		emp.m_salary = inputScanner.nextDouble();
-				
-		inputScanner.close();
+		sal = inputScanner.nextDouble();
 		
+		inputScanner.close();
+		//Call employee class and and create a new emp object with input values
+		Employee emp = new Employee(fName, lName, sal);
+		
+		//Use Employee class printInfo method to output values
 		emp.printInfo();
 	}
 
