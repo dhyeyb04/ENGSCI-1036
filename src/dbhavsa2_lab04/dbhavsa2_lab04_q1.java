@@ -105,10 +105,11 @@ public class dbhavsa2_lab04_q1 {
 	}
 	
 	public static void main(String[] args) {
+		char option;
 		Scanner inputScanner = new Scanner(System.in);
-				
+		
 		do {
-			char option = displayMenu();
+			option = displayMenu();
 			
 			switch (option) {
 			case 'a': //Power
@@ -116,13 +117,15 @@ public class dbhavsa2_lab04_q1 {
 				double base = inputScanner.nextDouble();
 				System.out.print("Please enter an integer exponent: ");
 				int exponent = inputScanner.nextInt();
-				System.out.print("The result is: " + Calculator.power(base, exponent));
+				System.out.println("The result is: " + Calculator.power(base, exponent));
+				break;
 			case 'b': //Sine
 				System.out.print("Please enter a number in radians: ");
 				double rad = inputScanner.nextDouble();
 				System.out.print("Please enter the number of iterations: ");
 				int iter = inputScanner.nextInt();
-				System.out.print("The result is: " + Calculator.tangent(rad, iter));
+				System.out.println("The result is: " + Calculator.sine(rad, iter));
+				break;
 			case 'c': //Inverse Tangent
 				Double x;
 
@@ -137,17 +140,20 @@ public class dbhavsa2_lab04_q1 {
 
 				System.out.print("Please enter the number of iterations: ");
 				int iter1 = inputScanner.nextInt();
-				System.out.print("The result is: " + Calculator.tangent(x, iter1));
+				System.out.println("The result is: " + Calculator.tangent(x, iter1));
+				break;
 			case 'd': //Exponential
 				System.out.print("Please enter a number for the exponential: ");
 				double num = inputScanner.nextDouble();
 				System.out.print("Please enter the number of iterations: ");
 				int iter2 = inputScanner.nextInt();
-				System.out.print("The result is: " + Calculator.exponential(num, iter2));
+				System.out.println("The result is: " + Calculator.exponential(num, iter2));
+				break;
 			case 'e': //Factorial
 				System.out.print("Please input a positive integer: ");
 				int initial = inputScanner.nextInt();
-				System.out.print("The result is: " + Calculator.factorial(initial));
+				System.out.println("The result is: " + Calculator.factorial(initial));
+				break;
 			}
 		} while (option != 'f');
 		
