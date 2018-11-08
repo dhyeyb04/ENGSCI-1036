@@ -31,7 +31,6 @@ public class dbhavsa2_lab04_q1 {
 						
 		} while (choice != 'a' && choice != 'b' && choice != 'c' && choice != 'd' && choice != 'e' && choice != 'f');
 		
-		inputScanner.close();
 		return choice;
 	}
 	
