@@ -7,7 +7,8 @@ public class dbhavsa2_lab04_q1 {
 	private static char displayMenu() {
 		Scanner inputScanner = new Scanner(System.in);
 		char choice;
-				
+		
+		//Checks if user input is a valid selection and keeps asking until it is
 		do {
 			System.out.println("----------------------------"); 
 			System.out.println("-- Calculator Application --");
@@ -29,11 +30,12 @@ public class dbhavsa2_lab04_q1 {
 			}
 						
 		} while (choice != 'a' && choice != 'b' && choice != 'c' && choice != 'd' && choice != 'e' && choice != 'f');
-				
+		
+		inputScanner.close();
 		return choice;
 	}
 	
-	public static class Calculator{
+	static class Calculator{
 		public static double power(double base, int exponent ) {
 			double result = 1;
 			//If positive power, step power up to input value
@@ -109,24 +111,25 @@ public class dbhavsa2_lab04_q1 {
 		Scanner inputScanner = new Scanner(System.in);
 		
 		do {
+			//Runs the display menu method which returns the option as a char
 			option = displayMenu();
 			
 			switch (option) {
-			case 'a': //Power
+			case 'a': //-----------------------------Power-----------------------------//
 				System.out.print("Please enter a real number base: ");
 				double base = inputScanner.nextDouble();
 				System.out.print("Please enter an integer exponent: ");
 				int exponent = inputScanner.nextInt();
 				System.out.println("The result is: " + Calculator.power(base, exponent));
 				break;
-			case 'b': //Sine
+			case 'b': //-----------------------------Sine-----------------------------//
 				System.out.print("Please enter a number in radians: ");
 				double rad = inputScanner.nextDouble();
 				System.out.print("Please enter the number of iterations: ");
 				int iter = inputScanner.nextInt();
 				System.out.println("The result is: " + Calculator.sine(rad, iter));
 				break;
-			case 'c': //Inverse Tangent
+			case 'c': //---------------------------Inverse Tangent----------------------------//
 				Double x;
 
 				do {
@@ -142,20 +145,20 @@ public class dbhavsa2_lab04_q1 {
 				int iter1 = inputScanner.nextInt();
 				System.out.println("The result is: " + Calculator.tangent(x, iter1));
 				break;
-			case 'd': //Exponential
+			case 'd': //---------------------------Exponential---------------------------//
 				System.out.print("Please enter a number for the exponential: ");
 				double num = inputScanner.nextDouble();
 				System.out.print("Please enter the number of iterations: ");
 				int iter2 = inputScanner.nextInt();
 				System.out.println("The result is: " + Calculator.exponential(num, iter2));
 				break;
-			case 'e': //Factorial
+			case 'e': //--------------------------Factorial--------------------------//
 				System.out.print("Please input a positive integer: ");
 				int initial = inputScanner.nextInt();
 				System.out.println("The result is: " + Calculator.factorial(initial));
 				break;
 			}
-		} while (option != 'f');
+		} while (option != 'f'); //Once input option is f, exit the loop
 		
 		System.out.println("------------------------------");
 		System.out.println("Goodbye!");
@@ -164,4 +167,3 @@ public class dbhavsa2_lab04_q1 {
 	}
 
 }
-
