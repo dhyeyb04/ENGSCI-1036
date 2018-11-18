@@ -12,16 +12,16 @@ class Card {
 	public String face() {
 		String concat;
 
-		if (denomination == 1) {
-			concat = "A" + suit;
-		} else if (denomination == 11) {
-			concat = "J" + suit;
-		} else if (denomination == 12) {
-			concat = "Q" + suit;
-		} else if (denomination == 13) {
-			concat = "K" + suit;
+		if (this.denomination == 1) {
+			concat = "A" + this.suit;
+		} else if (this.denomination == 11) {
+			concat = "J" + this.suit;
+		} else if (this.denomination == 12) {
+			concat = "Q" + this.suit;
+		} else if (this.denomination == 13) {
+			concat = "K" + this.suit;
 		} else {
-			concat = Integer.toString(denomination) + suit;
+			concat = Integer.toString(this.denomination) + this.suit;
 		}
 
 		return concat;
@@ -32,6 +32,7 @@ class Deck {
 	public Card cards[] = new Card[52];
 	private char suits[] = new char[4];
 	private int denominations = 13;
+	int counter = 0;
 
 	public Deck() {
 		suits[0] = 'S';
@@ -39,23 +40,28 @@ class Deck {
 		suits[2] = 'C';
 		suits[3] = 'H';
 
-		for (int i = 1; i <= 4; i++) {
+		for (char C : suits) {
 			for (int x = 1; x <= denominations; x++) {
-				if (i == 1) {
-					
-				} else if (i == 2) {
-					
-				} else if (i == 3) {
-					
-				} else if (i == 4) {
-					
-				}
+				cards[counter] = new Card(x, C);
+				counter++;
 			}
 		}
+		counter = 0;
 	}
 
 	public void printCards() {
-
+		for (char C : suits) {
+			for (int x = 1; x <= denominations; x++) {
+				if (x != 13) {
+					System.out.print(cards[counter].face() + ", ");
+					counter++;
+				} else {
+					System.out.print(cards[counter].face());
+					counter++;
+				}
+			}
+			System.out.println("");
+		}
 	}
 }
 
