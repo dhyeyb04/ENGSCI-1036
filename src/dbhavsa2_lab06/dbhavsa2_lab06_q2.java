@@ -12,6 +12,7 @@ public class dbhavsa2_lab06_q2 {
 		Scanner inputScanner = new Scanner(System.in);
 		System.out.println("How many assignments would you like to compute?");
 		num = inputScanner.nextInt();
+		System.out.println(" ");
 
 		int[] gradeArray = new int[num];
 		double[] weightArray = new double[num];
